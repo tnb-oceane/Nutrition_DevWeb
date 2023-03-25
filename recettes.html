@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    
+       /* Header */
+       header {
+        background-color: #6fbe3e;
+        border-bottom-left-radius: 55px;
+        border-bottom-right-radius: 55px;
+        color: #fff;
+        padding: 20px;
+        position: fixed;
+        width: 98%;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+    }
+
+    h1 {
+      font-size: 80px;
+      font-weight: bold;
+      text-align: center;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin-top: 0%;
+      margin-bottom: 0%;
+    }
+
+    header a {
+        color: white;
+        text-decoration: none;
+        border-radius: 15px;
+        padding: 15px;
+        background-color: #237726;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    header a:hover {
+        background-color: #3f2377;
+    }
+      
+    nav {
+        float: right;    
+    }
+      
+    nav li {
+      display: inline-block;
+      margin-left: 25px;
+    }
+    
+    .connecter-button{
+      float: left;
+      font-size: 25px;
+      margin-right: 15px;
+    }
+        
+
+        
+
+/*featured-recipes*/ 
+.featured-recipes {
+  background-color: #f8f8f8;
+  padding: 50px 0;
+}
+
+.featured-recipes .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.featured-recipes h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.featured-recipes .recipe {
+  width: 45%;
+  margin-bottom: 30px;
+}
+
+.featured-recipes .recipe img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.featured-recipes .recipe h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.featured-recipes .recipe p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.featured-recipes .recipe a {
+  display: inline-block;
+  background-color: #237726;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.featured-recipes .recipe a:hover {
+  background-color: #237726;
+}
+/*recipe-categories*/
+.recipe-categories {
+  background-color: #fff;
+  padding: 50px 0;
+}
+
+.recipe-categories .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.recipe-categories h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.recipe-categories .category-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.recipe-categories .category-list li {
+  width: 45%;
+  margin-bottom: 30px;
+}
+
+.recipe-categories .category-list a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  transition: transform 0.2s ease;
+}
+
+.recipe-categories .category-list a:hover {
+  transform: translateY(-5px);
+}
+
+.recipe-categories .category-list img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.recipe-categories .category-list h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.recipe-categories .category-list p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+/*.category-list*/
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+  list-style: none;
+}
+
+.category-list li {
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
+}
+
+.category-list li a {
+  display: block;
+  background-color: #f7f7f7;
+  border: 1px solid #e3e3e3;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.category-list li a:hover {
+  background-color: #e3e3e3;
+}
+
+.category-list li img {
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.category-list li h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.category-list li p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+ /**/
+ 
+ .recipe-of-the-day {
+  background-color: #f7f7f7;
+  padding: 50px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipe-card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.recipe-card img {
+  width: 200px;
+  height: auto;
+}
+
+.recipe-details {
+  padding: 20px;
+}
+
+.recipe-details h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.recipe-details p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.recipe-details a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #E42D2D;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.recipe-details a:hover {
+  background-color: #c32b2b;
+}
+
+
+
+          
+        
+    /*Footer */
+footer {
+background-color: rgb(111, 190, 62);
+padding: 2px;
+text-align: center;
+color: #fff;  
+border-top-right-radius: 75px;
+border-top-left-radius: 75px;
+}
+
+
+
+@media screen and (max-width: 833px) {
+  header nav{
+    display: none;
+  }
+}
+@media screen and (max-width: 1450px) {
+  .carte3{
+    display: none;
+  }
+}
+@media screen and (max-width: 1010px) {
+  .carte2{
+    display: none;
+  }
+}
+        </style>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 2202acebc3dcc215e32a55d74a816c3ea4800ba2
+</head>
+
+<body>
+<<<<<<< HEAD
+  <header>
+        <div class="logo">Happy Nutrition</div>
+        <h1>Happy Nutrition</h1>
+        <nav>
+            <ul class="menu">
+                <li><a class="active" href="/Acceuil.html">Acceuil</a></li>
+                <li><a class="active" href="articles.html">Articles</a></li>
+                <li><a href="pratique.html">Pratique nutritionnelle</a></li>
+                <li><a href="pratiques.html">Pratique sportive</a></li>
+                <li><a href="regimes.html">Régimes</a></li>
+            </ul>
+        </nav>
+        <button class="connecter-button"><a href="connecter.html">Connecter</a></button>
+    </header>
+=======
+
+  <header>   
+    <h1> Happy Nutrition </h1>
+    <nav>
+      <ul>
+        <li><a class="active" href="/articles.html">Articles</a></li>
+        <li><a href="pratique.html">Pratique nutritionnelle</a></li>
+        <li><a href="/pratiqueSport.html">Pratique sportive</a></li>
+        <li><a href="recettes.html">Recettes</a></li>
+        <li><a href="regimes.html">Régimes</a></li>
+      </ul>
+    </nav>
+    <a href="Acceuil.html" class="connecter-button">Acceuil</a>
+  </header>
+
+
+
+
+>>>>>>> 2202acebc3dcc215e32a55d74a816c3ea4800ba2
+    <section class="featured-recipes">
+    <div class="container">
+        <h2>Featured Recipes</h2>
+        <div class="recipe">
+            <img src="chicken-parmesan-recipe.jpg" alt="Recipe 1">
+            <h3>Chicken Parmesan</h3>
+            <p>A classic Italian dish that is perfect for any occasion.</p>
+            <a href="https://chefcuisto.com/recette/poulet-parmesan-la-meilleure/">View Recipe</a>
+        </div>
+        <div class="recipe">
+            <img src="avocado--scaled.jpeg" alt="Recipe 2">
+            <h3>Avocado Toast</h3>
+            <p>A quick and healthy breakfast or snack that is easy to make.</p>
+            <a href="https://www.papillesetpupilles.fr/2016/05/grilled-cheese-ou-sandwich-au-fromage-fondu.html/">View Recipe</a>
+        </div>
+    </div>
+</section>
+
+<section class="recipe-categories">
+    <div class="container">
+        <h2>Recipe Categories</h2>
+        <ul class="category-list">
+            <li><a href="https://www.ricardocuisine.com/recettes/entrees/bouchees?searchValue=&sort=recent&content-type=recipe&groupingType=2&grouping-id=2206&currentPage=1">
+                <img src="images/category1.jpg" alt="Category 1">
+                <h3>Appetizers</h3>
+                <p>Small bites to start your meal off right.</p>
+            </a></li>
+            
+            <li><a href="#">
+                <img src="Photosrepasprincipal.jpg" alt="Category 2">
+                <h3>Main Dishes</h3>
+                <p>Hearty meals that are the stars of the show.</p>
+            </a></li>
+            
+            <li><a href="#">
+                <img src="avocado--scaled.jpeg" alt="Category 3">
+                <h3>Desserts</h3>
+                <p>Sweet treats to finish your meal on a high note.</p>
+            </a></li>
+            
+            <li><a href="#">
+                <img src="images/category4.jpg" alt="Category 4">
+                <h3>Drinks</h3>
+                <p>Beverages to quench your thirst.</p>
+            </a></li>
+        </ul>
+    </div>
+</section>
+
+
+
+<section class="recipe-of-the-day">
+
+    <div class="container">
+        <h2>Recipe of the Day</h2>
+        <div class="recipe-card">
+            <img src="SandwichFromagePommesP60web.jpg" alt="Recipe of the Day">
+            <div class="recipe-details">
+                <h3>Grilled Cheese Sandwich</h3>
+                <p>A simple and delicious sandwich that everyone will love.</p>
+                <a href="https://www.papillesetpupilles.fr/2016/05/grilled-cheese-ou-sandwich-au-fromage-fondu.html/">View Recipe</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Recipe of the Day</h2>
+        <div class="recipe-card">
+            <img src="salade-nicoise-rapide.jpeg" alt="Recipe of the Day">
+            <div class="recipe-details">
+                <h3> Salade </h3>
+                <p>A simple and delicious Salade that everyone will be test </p>
+                <a href="https://www.marmiton.org/recettes/recette_salade-cesar_32442.aspx">View Recipe</a>
+            </div>
+        </div>
+    </div> 
+
+    <footer>
+      <h3>Contacter Nous</h3>
+      <p>Cergy, France <br>Phone: +33 123 456 789 <br>Email: Cytech@myhappynutrition.com</p>
+      <p>&copy; 2023  CY Tech</p>
+    </footer>
+  
+  </body>
+        

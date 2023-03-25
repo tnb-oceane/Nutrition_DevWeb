@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<head>
+  <title>Profil</title>
+
+  <style>
+         /* Header */
+    header {
+        background-color: #6fbe3e;
+        border-bottom-left-radius: 55px;
+        border-bottom-right-radius: 55px;
+        color: #fff;
+        padding: 20px;
+        height: 100px;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: bold;
+      text-align: center;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin: 0;
+      text-align: center;
+    }
+
+    header a {
+        color: white;
+        text-decoration: none;
+        border-radius: 15px;
+        padding: 15px;
+        background-color: #237726;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    header a:hover {
+        background-color: #3f2377;
+    }
+      
+    nav {
+        float: right;    
+    }
+      
+    nav li {
+      display: inline-block;
+      margin-left: 25px;
+    }
+    
+    .connecter-button{
+      float: top;
+      font-size: 25px;
+      margin-right: 15px;
+    }
+
+    body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    }
+
+    /*Footer */
+    footer {
+      background-color: #6fbe3e;
+      padding: 2px;
+      text-align: center;
+      color: #fff;  
+      border-top-right-radius: 75px;
+      border-top-left-radius: 75px;
+    }
+    
+
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+ul {
+    list-style: lower-alpha;
+}
+
+/* Style pour la section IMC */
+#imc {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+#imc h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#imc form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+#imc label {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#imc input {
+  padding: 5px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+#imc button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#imc button:hover {
+  background-color: #4CAF50;
+}
+
+#imc h3 {
+  color: #555;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#imc table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#imc table th {
+  background-color: #4CAF50;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+
+#imc table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+#imc p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#imc ul {
+  margin-left: 20px;
+}
+
+#imc ul li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#imc #imcResult {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+
+/*Journal*/
+
+
+.journal {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.journal h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.journal p {
+  margin-bottom: 20px;
+}
+
+.journal form {
+  margin-bottom: 20px;
+}
+
+.journal form h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.journal form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.journal form select,
+.journal form input[type="text"],
+.journal form input[type="date"],
+.journal form input[type="time"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.journal form button[type="submit"] {
+  background-color: #237726;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.journal form button[type="submit"]:hover {
+  background-color: #237726;
+}
+
+.journal .meals {
+  margin-top: 20px;
+}
+
+.journal .meals h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.journal .meals ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.journal .meals li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.journal .meals li span {
+  width: 20%;
+}
+
+.journal .meals li span.food {
+  width: 30%;
+}
+
+.journal .meals li span.quantity {
+  width: 30%;
+}
+.journal p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #333;
+}
+/* Style pour la section de calcul de besoins */
+
+#calcul-besoins {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+#calcul-besoins h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#calcul-besoins p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#calcul-besoins form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+#calcul-besoins label {
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+#calcul-besoins input[type="number"],
+#calcul-besoins select {
+  width: 200px;
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+#calcul-besoins input[type="submit"] {
+  background-color: #237726;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#calcul-besoins input[type="submit"]:hover {
+  background-color: #237726;
+}
+
+#resultats,
+#recommandations {
+  display: none;
+}
+
+#resultats h3,
+#recommandations h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#resultats p,
+#recommandations p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#resultats span,
+#recommandations ul li {
+  font-weight: bold;
+}
+
+#recommandations ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+#recommandations ul li {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+
+       footer {
+  background-color: #4CAF50;
+  padding: 50px 0;
+}
+
+
+
+
+.social-media a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #3b5998;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .contact-container,
+  .map-container {
+    width: 100%;
+    max-width: none;
+  }
+
+  .social-media {
+    margin-top: 20px;
+  }
+}
+
+</style>
+
+</head>
+<body>
+
+  <header>   
+    <h1> Happy Nutrition </h1>
+    <nav>
+      <ul>
+        <li><a class="active" href="/articles.html">Articles</a></li>
+        <li><a href="pratique.html">Pratique nutritionnelle</a></li>
+        <li><a href="/pratiqueSport.html">Pratique sportive</a></li>
+        <li><a href="recettes.html">Recettes</a></li>
+        <li><a href="regimes.html">Régimes</a></li>
+      </ul>
+    </nav>
+    <a href="Acceuil.html" class="connecter-button">Acceuil</a>
+  </header>
+        
+
+
+
+    <div id="imc">
+        <h2>Calculer son IMC</h2>
+        <form>
+          <label for="weight">Poids (en kg) :</label>
+          <input type="number" id="weight" name="weight" required><br><br>
+         
+          <label for="height">Taille (en m) :</label>
+          <input type="number" step="0.01" id="height" name="height" required><br><br>
+          
+          <button type="button">Calculer</button>
+        </form>
+
+        <div id="imcResult" class="imcResult"></div>
+        <br>
+        <h3>Catégories de l'IMC</h3>
+        <table>
+          <tr>
+            <th>IMC</th>
+            <th>Catégorie</th>
+          </tr>
+          <tr>
+            <td>moins de 18,5</td>
+            <td>Sous-poids</td>
+          </tr>
+          <tr>
+            <td>18,5 à 24,9</td>
+            <td>Poids santé</td>
+          </tr>
+          <tr>
+            <td>25 à 29,9</td>
+            <td>Surpoids</td>
+          </tr>
+          <tr>
+            <td>30 à 34,9</td>
+            <td>Obésité de classe 1</td>
+          </tr>
+          <tr>
+            <td>35 à 39,9</td>
+            <td>Obésité de classe 2</td>
+          </tr>
+          <tr>
+            <td>40 et plus</td>
+            <td>Obésité de classe 3</td>
+          </tr>
+        </table>
+        <br>
+        <h3>Qu'est-ce que l'IMC ?</h3>
+        <p>L'indice de masse corporelle (IMC) est un indicateur qui permet d'évaluer rapidement la corpulence d'une personne en utilisant son poids et sa taille. Il est utilisé pour évaluer les risques de maladies liées au poids, telles que le diabète, les maladies cardiaques et certains types de cancer.</p>
+        <br>
+        <h3>Conseils pour maintenir un poids santé</h3>
+        <ul>
+          <li>Manger une alimentation équilibrée avec une variétéd'aliments sains, comme des fruits, des légumes, des céréales complètes, des protéines maigres et des graisses saines</li>
+          <li>Faire de l'exercice régulièrement</li>
+          <li>Boire suffisamment d'eau</li>
+          <li>Limiter la consommation d'aliments riches en calories, en gras saturés, en sucre et en sel</li>
+          <li>Éviter de manger des repas trop copieux ou de grignoter entre les repas</li>
+          <li>Dormir suffisamment pour permettre au corps de récupérer</li>
+          <li>Éviter de fumer ou de consommer de l'alcool en excès</li>
+            </ul>
+    </div>
+          
+          <!-- Note: Vous pouvez ajouter du CSS pour styliser l'affichage de la section IMC -->
+      
+
+
+
+<div class="journal">
+    <h2>Journal alimentaire</h2>
+    <p>Utilisez notre journal alimentaire pour suivre ce que vous mangez chaque jour et ainsi avoir un aperçu de votre alimentation. Cela vous permettra de détecter les habitudes alimentaires à améliorer et de faire des ajustements pour atteindre vos objectifs nutritionnels.</p>
+    <form>
+      <h3>Ajouter un repas</h3>
+      <label for="date">Date :</label>
+      <input type="date" name="date" id="date">
+      <label for="time">Heure :</label>
+      <input type="time" name="time" id="time">
+      <label for="meal-type">Type de repas :</label>
+      <select name="meal-type" id="meal-type">
+        <option value="petit-dejeuner">Petit-déjeuner</option>
+        <option value="dejeuner">Déjeuner</option>
+        <option value="gouter">Goûter</option>
+        <option value="diner">Dîner</option>
+        <option value="collation">Collation</option>
+      </select>
+      <label for="food">Aliments consommés :</label>
+      <input type="text" name="food" id="food">
+      <label for="quantity">Quantité :</label>
+      <input type="text" name="quantity" id="quantity">
+      <button type="submit">Ajouter</button>
+    </form>
+    <div class="meals">
+        
+          </div>
+        </div>
+
+        <div id="calcul-besoins">
+            <h2>Calculer vos besoins journaliers en alimentation</h2>
+            <p>Remplissez le formulaire ci-dessous pour calculer vos besoins caloriques et en nutriments.</p>
+            
+            <form>
+              <label for="age">Âge :</label>
+              <input type="number" id="age" name="age" required><br>
+          
+              <label for="poids">Poids (kg) :</label>
+              <input type="number" id="poids" name="poids" required><br>
+          
+              <label for="taille">Taille (cm) :</label>
+              <input type="number" id="taille" name="taille" required><br>
+          
+              <label for="sexe">Sexe :</label>
+              <select id="sexe" name="sexe">
+                <option value="homme">Homme</option>
+                <option value="femme">Femme</option>
+              </select><br>
+          
+              <label for="niveau-activite">Niveau d'activité physique :</label>
+              <select id="niveau-activite" name="niveau-activite">
+                <option value="sedentaire">Sédentaire (peu ou pas d'exercice)</option>
+                <option value="modere">Modéré (exercice léger 1 à 3 jours par semaine)</option>
+                <option value="actif">Actif (exercice modéré 3 à 5 jours par semaine)</option>
+                <option value="tres-actif">Très actif (exercice intense 6 à 7 jours par semaine)</option>
+              </select><br>
+          
+              <input type="submit" value="Calculer">
+            </form>
+          
+            <div id="resultats">
+              <h3>Résultats :</h3>
+              <p>Votre besoin calorique journalier est de <span id="besoin-calorique"></span> calories.</p>
+              <p>Votre besoin en protéines est de <span id="besoin-proteines"></span> grammes par jour.</p>
+              <p>Votre besoin en glucides est de <span id="besoin-glucides"></span> grammes par jour.</p>
+              <p>Votre besoin en lipides est de <span id="besoin-lipides"></span> grammes par jour.</p>
+            </div>
+          
+            <div id="recommandations">
+              <h3>Recommandations :</h3>
+              <p>Voici quelques aliments sains recommandés pour répondre à vos besoins en nutriments :</p>
+              <ul>
+                <li>Aliments riches en protéines : poulet, poisson, légumineuses, noix, graines.</li>
+                <li>Aliments riches en glucides : fruits, légumes, céréales complètes, légumineuses.</li>
+                <li>Aliments riches en lipides : avocats, noix, huiles végétales, poissons gras.</li>
+              </ul>
+            </div>
+        </div>
+          
+
+
+        <footer>
+          <h3>Contacter Nous</h3>
+          <p>Cergy, France <br>Phone: +33 123 456 789 <br>Email: Cytech@myhappynutrition.com</p>
+          <p>&copy; 2023  CY Tech</p>
+        </footer>
+  </html>

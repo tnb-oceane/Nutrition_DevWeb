@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Healthy Eating</title>
+    <style>
+
+    
+       /* Header */
+       header {
+        background-color: #6fbe3e;
+        border-bottom-left-radius: 55px;
+        border-bottom-right-radius: 55px;
+        color: #fff;
+        padding: 20px;
+        position: fixed;
+        width: 98%;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+    }
+
+    h1 {
+      font-size: 80px;
+      font-weight: bold;
+      text-align: center;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin-top: 0%;
+      margin-bottom: 0%;
+    }
+
+    header a {
+        color: white;
+        text-decoration: none;
+        border-radius: 15px;
+        padding: 15px;
+        background-color: #237726;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    header a:hover {
+        background-color: #3f2377;
+    }
+      
+    nav {
+        float: right;    
+    }
+      
+    nav li {
+      display: inline-block;
+      margin-left: 25px;
+    }
+    
+    .connecter-button{
+      float: left;
+      font-size: 25px;
+      margin-right: 15px;
+    }
+    body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    }
+   
+
+
+
+/*food-groups*/
+#food-groups {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#food-groups h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#food-groups p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+#food-groups ul {
+  list-style-type: none;
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+
+#food-groups li {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+#food-groups table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 80%;
+}
+
+#food-groups th,
+#food-groups td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+#food-groups th {
+  background-color: #f2f2f2;
+  font-size: 18px;
+  font-weight: bold;
+}
+.food-groups p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #333;
+}
+/*healthy-recipes*/
+#healthy-recipes {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+#healthy-recipes h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#healthy-recipesl p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+#healthy-recipes ul {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-left: 20px;
+}
+
+#healthy-recipes li {
+  margin-bottom: 10px;
+}
+#healthy-recipes li::before {
+  content: "\2022";
+  color: #6fbe3e;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/*portion-control*/
+#portion-control {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+#portion-control h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#portion-control p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+#portion-control ul {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-left: 20px;
+}
+
+#portion-control li {
+  margin-bottom: 10px;
+}
+#portion-control li::before {
+  content: "\2022";
+  color: #6fbe3e;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/*eating-out*/
+#eating-out {
+  
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+#eating-out h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#eating-out p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+#eating-out ul {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-left: 20px;
+}
+
+#eating-out li {
+  margin-bottom: 10px;
+}
+
+#eating-out li::before {
+  content: "\2022";
+  color: #6fbe3e;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+/*benefits*/
+#benefits {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+#benefits h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#benefits p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+#benefits ul {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-left: 20px;
+}
+
+#benefits li {
+  margin-bottom: 10px;
+}
+#benefits li::before {
+  content: "\2022";
+  color: #6fbe3e;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+
+.benefits li {
+  margin: 5px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1.1em;
+  color: #333;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.benefits li:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+/*snacks*/
+#snacks {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+#snacks h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#snacks p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+#snacks ul {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-left: 20px;
+}
+
+#snacks li {
+  margin-bottom: 10px;
+}
+#snacks li::before {
+  content: "\2022";
+  color: #6fbe3e;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/*Footer */
+   footer {
+background-color: rgb(111, 190, 62);
+padding: 2px;
+text-align: center;
+color: #fff;  
+border-top-right-radius: 75px;
+border-top-left-radius: 75px;
+}
+
+
+
+@media screen and (max-width: 833px) {
+  header nav{
+    display: none;
+  }
+}
+@media screen and (max-width: 1450px) {
+  .carte3{
+    display: none;
+  }
+}
+@media screen and (max-width: 1010px) {
+  .carte2{
+    display: none;
+  }
+}
+        
+
+        </style>
+<<<<<<< HEAD
+</head>
+<body>
+	<header>
+    <header>
+      <div class="logo">Happy Nutrition</div>
+      <h1>Happy Nutrition</h1>
+      <nav>
+          <ul class="menu">
+            <li><a href="/Acceuil.html">Acceuil</a></li>
+              <li><a class="active" href="articles.html">Articles</a></li>
+              <li><a href="/pratiqueSport.html">Pratique sportive</a></li>
+              <li><a href="recettes.html">Recettes</a></li>
+              <li><a href="regimes.html">Régimes</a></li>
+          </ul>
+      </nav>
+      <button class="connecter-button"><a href="connecter.html">Connecter</a></button>
+  </header>
+  
+	<main>
+=======
+
+<header>   
+  <h1> Happy Nutrition </h1>
+  <nav>
+    <ul>
+      <li><a class="active" href="/articles.html">Articles</a></li>
+      <li><a href="pratique.html">Pratique nutritionnelle</a></li>
+      <li><a href="/pratiqueSport.html">Pratique sportive</a></li>
+      <li><a href="recettes.html">Recettes</a></li>
+      <li><a href="regimes.html">Régimes</a></li>
+    </ul>
+  </nav>
+  <a href="Acceuil.html" class="connecter-button">Acceuil</a>
+</header>
+
+
+>>>>>>> 2202acebc3dcc215e32a55d74a816c3ea4800ba2
+		<section id="food-groups">
+			<h2>Food Groups</h2>
+			<p>There are five main food groups that are important for maintaining a healthy diet:</p>
+			<ul>
+				<li>Fruits</li>
+				<li>Vegetables</li>
+				<li>Grains</li>
+				<li>Protein</li>
+				<li>Dairy</li>
+			</ul>
+			<p>It is recommended that adults consume a certain number of servings from each food group each day. Here is a general guideline:</p>
+			<table>
+				<tr>
+					<th>Food Group</th>
+					<th>Servings per day</th>
+				</tr>
+				<tr>
+					<td>Fruits</td>
+					<td>2 cups</td>
+				</tr>
+				<tr>
+					<td>Vegetables</td>
+					<td>2.5 cups</td>
+				</tr>
+				<tr>
+					<td>Grains</td>
+					<td>6 ounces</td>
+				</tr>
+				<tr>
+					<td>Protein</td>
+					<td>5.5 ounces</td>
+				</tr>
+				<tr>
+					<td>Dairy</td>
+					<td>3 cups</td>
+				</tr>
+			</table>
+		</section>
+		
+    <section id="healthy-recipes">
+			<h2>Healthy Recipes</h2>
+			<div class="recipe">
+				<h3>Grilled Chicken and Vegetable Kabobs</h3>
+				<img src="kabobs.jpg" alt="Grilled Chicken and Vegetable Kabobs">
+				<p>Ingredients:</p>
+				<ul>
+					<li>2 boneless, skinless chicken breasts, cut into chunks</li>
+					<li>1 zucchini, sliced</li>
+					<li>1 red bell pepper, sliced</li>
+					<li>1 yellow onion, sliced</li>
+					<li>2 tablespoons olive oil</li>
+					<li>1 teaspoon salt</li>
+					<li>1/2 teaspoon black pepper</li>
+				
+                <p><a href="https://www.marmiton.org/recettes/recette_brochettes-de-poulet-et-de-legumes-marinees-au-quatre-epices_73533.aspx">See more healthy recipes here</a></p>
+                </div>
+            </section>
+            
+            <section id="portion-control">
+                <h2>Portion Control</h2>
+                <p>Portion control is an important part of maintaining a healthy diet. Here are some tips:</p>
+                <ul>
+                    <li>Use smaller plates and bowls to control your portion sizes.</li>
+                    <li>Measure your food to ensure you are eating the correct portion size.</li>
+                    <li>Don't eat straight from the bag or container. Portion out your food onto a plate or bowl.</li>
+                    <li>Eat slowly and savor your food. This will help you feel full and satisfied.</li>
+                </ul>
+            </section>
+            
+            <section id="eating-out">
+                <h2>Eating Out</h2>
+                <p>Eating out can be a challenge when you are trying to eat healthy, but it is possible. Here are some tips:</p>
+                <ul>
+                    <li>Look for healthy options on the menu, such as grilled or roasted meats, vegetables, and salads.</li>
+                    <li>Ask for dressings and sauces on the side so you can control how much you eat.</li>
+                    <li>Avoid fried foods and dishes with a lot of cheese or cream.</li>
+                    <li>Share your meal with a friend or take half of it home for later.</li>
+                </ul>
+            </section>
+            
+            <section id="benefits">
+                <h2>Benefits</h2>
+                <p>Eating a healthy diet has many benefits:</p>
+                <ul>
+                    <li>Helps maintain a healthy weight</li>
+                    <li>Reduces the risk of chronic diseases, such as heart disease and diabetes</li>
+                    <li>Provides essential nutrients for overall health</li>
+                    <li>Improves mood and energy levels</li>
+                    <li>Helps you feel and look your best</li>
+                </ul>
+            </section>
+            
+            <section id="snacks">
+                <h2>Healthy Snacks</h2>
+                <p>Snacking can be part of a healthy diet, as long as you choose the right snacks. Here are some healthy options:</p>
+                <ul>
+                    <li>Fruits and vegetables with hummus or nut butter</li>
+                    <li>Plain Greek yogurt with berries and nuts</li>
+                    <li>Air-popped popcorn</li>
+                    <li>Hard-boiled eggs</li>
+                    <li>Homemade trail mix with nuts, seeds, and dried fruit</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+          <h3>Contacter Nous</h3>
+          <p>Cergy, France <br>Phone: +33 123 456 789 <br>Email: Cytech@myhappynutrition.com</p>
+          <p>&copy; 2023  CY Tech</p>
+        </footer>
+      
+      </body>
+            
+    
+   
