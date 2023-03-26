@@ -44,15 +44,14 @@
     }
     
     .connecter-button{
-      float: top;
       font-size: 25px;
-      margin-right: 15px;
+      
     }
 
     body {
     font-family: Arial, sans-serif;
     font-size: 16px;
-    line-height: 1.5;
+   
     }
 
     /*Footer */
@@ -70,7 +69,7 @@
 h2 {
     font-size: 24px;
     font-weight: bold;
-    margin: 0;
+  
 }
 
 
@@ -369,154 +368,31 @@ ul {
   margin-bottom: 5px;
 }
 
-
+@media screen and (max-width: 990px) {
+            header nav{
+                display: none;
+            }
+        }
 
 </style>
 
 </head>
 <body>
 
-  <header>   
-    <h1> Happy Nutrition </h1>
-    <nav>
-      <ul>
-        <li><a class="active" href="/articles.html">Articles</a></li>
-        <li><a href="pratique.html">Pratique nutritionnelle</a></li>
-        <li><a href="/pratiqueSport.html">Pratique sportive</a></li>
-        <li><a href="recettes.html">Recettes</a></li>
-        <li><a href="regimes.html">Régimes</a></li>
-      </ul>
-    </nav>
-    <a href="accueil.html" class="connecter-button">accueil</a>
-  </header>
         
 
 
 
-    <div id="imc">
-        <h2>Calculer son IMC</h2>
-        <form>
-          <label for="weight">Poids (en kg) :</label>
-          <input type="number" id="weight" name="weight" required><br><br>
-         
-          <label for="height">Taille (en m) :</label>
-          <input type="number" step="0.01" id="height" name="height" required><br><br>
-          
-          <button type="button">Calculer</button>
-        </form>
 
-        <div id="imcResult" class="imcResult"></div>
-        <br>
-        <h3>Catégories de l'IMC</h3>
-        <table>
-          <tr>
-            <th>IMC</th>
-            <th>Catégorie</th>
-          </tr>
-          <tr>
-            <td>moins de 18,5</td>
-            <td>Sous-poids</td>
-          </tr>
-          <tr>
-            <td>18,5 à 24,9</td>
-            <td>Poids santé</td>
-          </tr>
-          <tr>
-            <td>25 à 29,9</td>
-            <td>Surpoids</td>
-          </tr>
-          <tr>
-            <td>30 à 34,9</td>
-            <td>Obésité de classe 1</td>
-          </tr>
-          <tr>
-            <td>35 à 39,9</td>
-            <td>Obésité de classe 2</td>
-          </tr>
-          <tr>
-            <td>40 et plus</td>
-            <td>Obésité de classe 3</td>
-          </tr>
-        </table>
-        <br>
-        <h3>Qu'est-ce que l'IMC ?</h3>
-        <p>L'indice de masse corporelle (IMC) est un indicateur qui permet d'évaluer rapidement la corpulence d'une personne en utilisant son poids et sa taille. Il est utilisé pour évaluer les risques de maladies liées au poids, telles que le diabète, les maladies cardiaques et certains types de cancer.</p>
-        <br>
-        <h3>Conseils pour maintenir un poids santé</h3>
-        <ul>
-          <li>Manger une alimentation équilibrée avec une variétéd'aliments sains, comme des fruits, des légumes, des céréales complètes, des protéines maigres et des graisses saines</li>
-          <li>Faire de l'exercice régulièrement</li>
-          <li>Boire suffisamment d'eau</li>
-          <li>Limiter la consommation d'aliments riches en calories, en gras saturés, en sucre et en sel</li>
-          <li>Éviter de manger des repas trop copieux ou de grignoter entre les repas</li>
-          <li>Dormir suffisamment pour permettre au corps de récupérer</li>
-          <li>Éviter de fumer ou de consommer de l'alcool en excès</li>
-            </ul>
-    </div>
           
           <!-- Note: Vous pouvez ajouter du CSS pour styliser l'affichage de la section IMC -->
       
 
 
 
-<div class="journal">
-    <h2>Journal alimentaire</h2>
-    <p>Utilisez notre journal alimentaire pour suivre ce que vous mangez chaque jour et ainsi avoir un aperçu de votre alimentation. Cela vous permettra de détecter les habitudes alimentaires à améliorer et de faire des ajustements pour atteindre vos objectifs nutritionnels.</p>
-    <form>
-      <h3>Ajouter un repas</h3>
-      <label for="date">Date :</label>
-      <input type="date" name="date" id="date">
-      <label for="time">Heure :</label>
-      <input type="time" name="time" id="time">
-      <label for="meal-type">Type de repas :</label>
-      <select name="meal-type" id="meal-type">
-        <option value="petit-dejeuner">Petit-déjeuner</option>
-        <option value="dejeuner">Déjeuner</option>
-        <option value="gouter">Goûter</option>
-        <option value="diner">Dîner</option>
-        <option value="collation">Collation</option>
-      </select>
-      <label for="food">Aliments consommés :</label>
-      <input type="text" name="food" id="food">
-      <label for="quantity">Quantité :</label>
-      <input type="text" name="quantity" id="quantity">
-      <button type="submit">Ajouter</button>
-    </form>
-    <div class="meals">
-        
-          </div>
-        </div>
 
-        <div id="calcul-besoins">
-            <h2>Calculer vos besoins journaliers en alimentation</h2>
-            <p>Remplissez le formulaire ci-dessous pour calculer vos besoins caloriques et en nutriments.</p>
-            
-            <form>
-              <label for="age">Âge :</label>
-              <input type="number" id="age" name="age" required><br>
-          
-              <label for="poids">Poids (kg) :</label>
-              <input type="number" id="poids" name="poids" required><br>
-          
-              <label for="taille">Taille (cm) :</label>
-              <input type="number" id="taille" name="taille" required><br>
-          
-              <label for="sexe">Sexe :</label>
-              <select id="sexe" name="sexe">
-                <option value="homme">Homme</option>
-                <option value="femme">Femme</option>
-              </select><br>
-          
-              <label for="niveau-activite">Niveau d'activité physique :</label>
-              <select id="niveau-activite" name="niveau-activite">
-                <option value="sedentaire">Sédentaire (peu ou pas d'exercice)</option>
-                <option value="modere">Modéré (exercice léger 1 à 3 jours par semaine)</option>
-                <option value="actif">Actif (exercice modéré 3 à 5 jours par semaine)</option>
-                <option value="tres-actif">Très actif (exercice intense 6 à 7 jours par semaine)</option>
-              </select><br>
-          
-              <input type="submit" value="Calculer">
-            </form>
+
+        
           
             <div id="resultats">
               <h3>Résultats :</h3>

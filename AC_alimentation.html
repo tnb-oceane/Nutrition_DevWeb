@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<head>
+    <title>Alimentationtion</title>
+    <style>
+        /* Header */
+        header {
+            background-color: #6fbe3e;
+            border-bottom-left-radius: 55px;
+            border-bottom-right-radius: 55px;
+            color: #fff;
+            padding: 20px;
+            height: 110px;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 0;
+            text-align: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            padding: 15px;
+            background-color: #237726;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        header a:hover {
+            background-color: #3f2377;
+        }
+
+        nav {
+            float: right;    
+        }
+      
+        nav li {
+            display: inline-block;
+            margin-left: 25px;
+        }
+    
+        .connecter-button{
+            font-size: 25px;
+            margin-right: 15px;
+        }
+
+        /*Corps de la page*/
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+
+        ul {
+            list-style: lower-alpha;
+        }
+
+
+        /*Footer */
+        footer {
+            background-color: #6fbe3e;
+            padding: 2px;
+            text-align: center;
+            color: #fff;  
+            border-top-right-radius: 75px;
+            border-top-left-radius: 75px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1> Happy Nutrition </h1>
+        <nav>
+            <ul>
+                <li><a class="active" href="/AC_profil.html">Profil</a></li>
+                <li><a href="/AC_journal.html">Journal</a></li>
+            </ul>
+        </nav>
+        <a class="connecter-button" href="/SC_accueil.html">Accueil</a>
+    </header>
+
+    <h3>Qu'est-ce que l'IMC ?</h3>
+    <p>L'indice de masse corporelle (IMC) est un indicateur qui permet d'évaluer rapidement la corpulence d'une personne en utilisant son poids et sa taille. Il est utilisé pour évaluer les risques de maladies liées au poids, telles que le diabète, les maladies cardiaques et certains types de cancer.</p><br>
+
+    <div id="imc">
+        <h2>Calculer son IMC</h2>
+        <form>
+            <label for="weight">Poids (kg) :</label>
+            <input type="number" id="weight" name="weight" required><br>
+            
+            <label for="height">Taille (cm) :</label>
+            <input type="number" step="0.01" id="height" name="height" required><br>
+            
+            <button type="button">Calculer</button>
+        </form>
+
+        <div id="imcResult" class="imcResult"></div><br>
+        <h3>Catégories de l'IMC</h3>
+        <table>
+            <tr>
+                <th>IMC</th>
+                <th>Catégorie</th>
+            </tr>
+            <tr>
+                <td>moins de 18,5</td>
+                <td>Sous-poids</td>
+            </tr>
+            <tr>
+                <td>18,5 à 24,9</td>
+                <td>Poids santé</td>
+            </tr>
+            <tr>
+                <td>25 à 29,9</td>
+                <td>Surpoids</td>
+            </tr>
+            <tr>
+                <td>30 à 34,9</td>
+                <td>Obésité de classe 1</td>
+            </tr>
+            <tr>
+                <td>35 à 39,9</td>
+                <td>Obésité de classe 2</td>
+            </tr>
+            <tr>
+                <td>40 et plus</td>
+                <td>Obésité de classe 3</td>
+            </tr>
+        </table><br>
+
+        <h3>Conseils pour maintenir un poids santé</h3>
+        <ul>
+            <li>Manger une alimentation équilibrée avec une variétéd'aliments sains, comme des fruits, des légumes, des céréales complètes, des protéines maigres et des graisses saines</li>
+            <li>Faire de l'exercice régulièrement</li>
+            <li>Boire suffisamment d'eau</li>
+            <li>Limiter la consommation d'aliments riches en calories, en gras saturés, en sucre et en sel</li>
+            <li>Éviter de manger des repas trop copieux ou de grignoter entre les repas</li>
+            <li>Dormir suffisamment pour permettre au corps de récupérer</li>
+            <li>Éviter de fumer ou de consommer de l'alcool en excès</li>
+        </ul>
+
+    </div>
+
+    <p>Pour maintenir sa santé il est nécessaire de manger selon ses besoins journalier.</p>
+
+    <div id="calcul-besoins">
+        <h2>Calculer vos besoins journaliers en alimentation</h2>
+        <h3>Calculer à partir de mes données personnelles</h3>
+        <h3>Calculer à partir de nouvelles données</h3>
+        <p>Remplissez le formulaire ci-dessous pour calculer vos besoins caloriques et en nutriments à partir de nouvelles données.</p>
+
+        <form>
+            <label for="sexe">Sexe :</label><br>
+            <select id="sexe" name="sexe">
+                <option value="homme">Homme</option>
+                <option value="femme">Femme</option>
+            </select><br>
+
+            <label for="age">Âge :</label><br>
+            <input type="number" id="age" name="age" required><br>
+      
+            <label for="poids">Poids (kg) :</label><br>
+            <input type="number" id="poids" name="poids" required><br>
+      
+            <label for="taille">Taille (cm) :</label><br>
+            <input type="number" id="taille" name="taille" required><br>
+        
+            <label for="niveau-activite">Niveau d'activité physique :</label><br>
+            <select id="niveau-activite" name="niveau-activite" required>
+                <option value="sedentaire">Sédentaire (peu ou pas d'exercice)</option>
+                <option value="modere">Modéré (exercice léger 1 à 3 jours par semaine)</option>
+                <option value="actif">Actif (exercice modéré 3 à 5 jours par semaine)</option>
+                <option value="tres-actif">Très actif (exercice intense 6 à 7 jours par semaine)</option>
+            </select><br>
+      
+            <input type="submit" value="Enregistrer">
+        </form>
+    </div>
+
+
+    <footer>
+        <h3>Contacter Nous</h3>
+        <p>Cergy, France <br>Phone: +33 123 456 789 <br>Email: Cytech@myhappynutrition.com</p>
+        <p>&copy; 2023  CY Tech</p>
+    </footer>
+
+</body>
+</html>
