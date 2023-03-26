@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
     <style>
-       /* Header */
-       header {
+
+        /* Header */
+        header {
         background-color: #6fbe3e;
         border-bottom-left-radius: 55px;
         border-bottom-right-radius: 55px;
         color: #fff;
         padding: 20px;
-        position: fixed;
-        width: 98%;
-        top: 0%;
-        left: 0%;
-        right: 0%;
+        height: 100px;
     }
 
     h1 {
-      font-size: 80px;
+      font-size: 40px;
       font-weight: bold;
       text-align: center;
       font-family: Georgia, 'Times New Roman', Times, serif;
-      margin-top: 0%;
-      margin-bottom: 0%;
+      margin: 0;
+      text-align: center;
     }
 
     header a {
@@ -46,27 +43,16 @@
     }
     
     .connecter-button{
-      float: left;
+      float: top;
       font-size: 25px;
       margin-right: 15px;
     }
 
-    section {
-  background-color: #f8f8f8;
-  padding: 20px;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #333;
-  margin-bottom: 10px;
-}
+    body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    }
 
 
        
@@ -97,6 +83,84 @@ h2 {
     display: none;
   }
 }
+
+
+/*Aliments*/
+
+.Courseàpied {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: #333;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.Courseàpied h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.Courseàpied p {
+  margin-bottom: 10px;
+}
+
+/*Natation*/
+.Natation {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: #333;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.Natation h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.Natation p {
+  margin-bottom: 10px;
+}
+/*Cyclisme*/
+.Cyclisme {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: #333;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.Cyclisme h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.Cyclisme p {
+  margin-bottom: 10px;
+}
+
+
     </style>
 
 <body>
@@ -117,65 +181,30 @@ h2 {
   </header>
 
 
-		<section>
+		<div class="Courseàpied">
 			<h2>Course à pied</h2>
 			<p>La course à pied est un excellent moyen de rester en forme. Elle améliore l'endurance cardiovasculaire, renforce les muscles des jambes et peut aider à perdre du poids. Pour commencer, il suffit d'avoir une paire de chaussures confortables et de se lancer !</p>
-			<img src="course-a-pied.jpg" alt="Course à pied">
-		</section>
-		<section>
+      <img src="R.jpeg" alt="Course à pied" style="width: 300px; height: 200px; object-fit: cover; object-position: 20% 10%;">
+    </div>
+
+		<div class="Natation">
 			<h2>Natation</h2>
 			<p>La natation est un sport complet qui sollicite tous les muscles du corps. Elle est également très douce pour les articulations, ce qui en fait une pratique idéale pour les personnes souffrant de douleurs articulaires. Pour commencer, il suffit de trouver une piscine près de chez soi et de se jeter à l'eau !</p>
-			<img src="natation.jpg" alt="Natation">
-		</section>
-		<section>
+			<img src="swiming.jpg" alt="Natation" style="width: 300px; height: 200px; object-fit: cover; object-position: 20% 10%;">
+    </div>
+
+		<div class="Cyclisme">
 			<h2>Cyclisme</h2>
 			<p>Le cyclisme est un excellent moyen de se déplacer tout en faisant de l'exercice. Il renforce les muscles des jambes et des fesses, améliore l'endurance cardiovasculaire et peut aider à perdre du poids. Pour commencer, il suffit d'avoir un vélo confortable et de se lancer sur les routes ou les pistes cyclables !</p>
-			<img src="cyclisme.jpg" alt="Cyclisme">
-		</section>
-    <section>
-			<h2>YouTube Channel</h2>
-			<p>Check out our recommended YouTube channel for fitness and nutrition tips:</p>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			<p>Or visit the channel directly <a href="#">here</a>.</p>
-		</section>
-		<section>
-			<h2>Fitness Tips</h2>
-			<p>Stay active and healthy with these tips:</p>
-			<ul>
-				<li>Start with simple exercises like walking or jogging</li>
-				<li>Set achievable goals to stay motivated</li>
-				<li>Find a workout buddy to keep you accountable</li>
-				<li>Incorporate fitness into your daily routine, like taking the stairs instead of the elevator</li>
-			</ul>
-		</section>
-		<section>
-			<h2>Healthy Recipes</h2>
-			<p>Try these nutritious recipes:</p>
-			<ul>
-				<li><strong>Breakfast:</strong> Avocado Toast with Egg</li>
-				<li><strong>Lunch:</strong> Grilled Chicken Salad</li>
-				<li><strong>Dinner:</strong> Baked Salmon with Roasted Vegetables</li>
-				<li><strong>Snack:</strong> Greek Yogurt with Mixed Berries</li>
-			</ul>
-			<p>Click on each recipe to view the nutritional value.</p>
-		</section>
-		<section>
-			<h2>Success Stories</h2>
-			<p>Read about people who have achieved their fitness and nutrition goals:</p>
-			<ul>
-				<li>Interview with John, who lost 50 pounds through regular exercise and healthy eating</li>
-				<li>Story of Sarah, who went from a sedentary lifestyle to running her first marathon</li>
-			</ul>
-		</section>
-		<section>
-			<h2>Product Reviews</h2>
-			<p>Check out our reviews of fitness and nutrition products:</p>
-			<ul>
-				<li>Review of Protein Powders</li>
-				<li>Comparison of Fitness Trackers</li>
-			</ul>
-			<p>Find out which products we recommend for your fitness journey.</p>
-		</section>
+			<img src="Cyclisme.jpg" alt="Cyclisme" style="width: 300px; height: 200px; object-fit: cover; object-position: 20% 10%;">
+    </div>
+
+
+
+
+
+
+
 
     <footer>
       <h3>Contacter Nous</h3>
