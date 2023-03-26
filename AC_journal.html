@@ -50,17 +50,66 @@
         /*Corps de la page*/
         body {
             font-family: Arial, sans-serif;
-            font-size: 16px;
+            font-size: 20px;
         }
 
-        h2 {
-            font-size: 24px;
+        a {
+            background-color: #237726;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 15px;
             font-weight: bold;
+            transition: all 0.5s;
+        }
+        a:hover {
+            background-color: #3f2377;
         }
 
+        .journal{
+            background-color: rgba(141, 222, 147, 0.221);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 50px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        .journal:hover{
+            background-color: rgba(37, 137, 44, 0.221);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7); 
+        }
 
-        ul {
-            list-style: lower-alpha;
+        /*Formulaire*/
+        label{
+            display: block;
+        }
+
+        input[type="text"], input[type="number"],input[type="time"], input[type="date"], select{
+            width:  40%;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            margin-bottom: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        input[type="submit"] {
+            margin: auto;
+            background-color: #237726;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 15px;
+            cursor: pointer;
+            display: block;
+            font-weight: bold;
+            transition: all 0.5s;
+        }
+        input[type="submit"]:hover {
+            background-color: #3f2377;
         }
 
 
@@ -91,17 +140,17 @@
 
     <div class="journal">
         <h2>Journal alimentaire</h2>
-        <p>Utilisez notre journal alimentaire pour suivre ce que vous mangez chaque jour. Cela vous permettra de détecter VOS habitudes alimentaires? d'améliorer vos repas et de faire des ajustements pour atteindre vos objectifs nutritionnels.</p>
+        <p>Utilisez notre journal alimentaire pour suivre ce que vous mangez chaque jour. Cela vous permettra de détecter vos habitudes alimentaires, d'améliorer vos repas et de faire des ajustements pour atteindre vos objectifs nutritionnels.</p>
         
         <form>
             <h3>Ajouter un repas</h3>
-            <label for="date">Date :</label>
+            <label for="date">Date :</label><br>
             <input type="date" name="date" id="date">
 
-            <label for="time">Heure :</label>
+            <label for="time">Heure :</label><br>
             <input type="time" name="time" id="time">
 
-            <label for="meal-type">Type de repas :</label>
+            <label for="meal-type">Type de repas :</label><br>
             <select name="meal-type" id="meal-type">
                 <option value="petit-dejeuner">Petit-déjeuner</option>
                 <option value="dejeuner">Déjeuner</option>
@@ -110,46 +159,52 @@
                 <option value="collation">Collation</option>
             </select>
 
-            <label for="food">Aliments consommés :</label>
+            <label for="food">Aliments consommés :</label><br>
             <input type="text" name="food" id="food">
 
-            <label for="quantity">Quantité :</label>
-            <input type="text" name="quantity" id="quantity">
+            <label for="quantity">Quantité (g) :</label><br>
+            <input type="number" name="quantity" id="quantity">
             
-            <button type="submit">Ajouter</button>
+            <input type="submit" value="Ajouter">
         </form>
 
+        <br><br>
+
+        <a href="AC_profil.html">Voir les Jours précédents</a>
     </div>
 
     <div class="journal">
-        <h2>Activité : calculer nombre de pas</h2>
-        
+        <h2>Journal des activités</h2>
+        <p>Utilisez notre journal des activités pour suivre vos activités physique au fil des jours. Cela vous permettra de détecter vos habitudes, d'améliorer et de faire des ajustements pour atteindre vos objectifs sportifs.</p>
         <form>
             <h3>Ajouter une activité</h3>
-            <label for="date">Date :</label>
+            <label for="date">Date :</label><br>
             <input type="date" name="date" id="date">
 
-            <label for="time">Heure :</label>
+            <label for="time">Heure :</label><br>
             <input type="time" name="time" id="time">
 
-            <label for="meal-type">Type d'activité :</label>
+            <label for="meal-type">Type d'activité :</label><br>
             <select name="meal-type" id="meal-type">
                 <option value=""></option>
                 <option value=""></option>
                 <option value=""></option>
                 <option value=""></option>
                 <option value=""></option>
-            </select>
+            </select><br>
 
-            <label for="food">Temps d'activité :</label>
-            <input type="text" name="food" id="food">
+            <label for="food">Temps d'activité :</label><br>
+            <input type="time" name="food" id="food">
 
-            <label for="quantity">Quantité :</label>
-            <input type="text" name="quantity" id="quantity">
+            <label for="quantity">Quantité (g) :</label><br>
+            <input type="number" name="quantity" id="quantity">
             
-            <button type="submit">Ajouter</button>
+            <input type="submit" value="Ajouter">
         </form>
 
+        <br><br>
+
+        <a href="AC_profil.html">Voir les Jours précédents</a>
     </div>
 
     <footer>

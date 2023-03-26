@@ -50,19 +50,23 @@
         /*Corps de la page*/
         body {
             font-family: Arial, sans-serif;
-            font-size: 16px;
+            font-size: 20px;
         }
 
-        h2 {
-            font-size: 24px;
-            font-weight: bold;
+        .donnees{
+            background-color: rgba(141, 222, 147, 0.221);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 50px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.5s;
         }
-
-
-        ul {
-            list-style: lower-alpha;
+        .donnees:hover{
+            background-color: rgba(37, 137, 44, 0.221);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7); 
         }
-
 
         /*Footer */
         footer {
@@ -72,6 +76,37 @@
             color: #fff;  
             border-top-right-radius: 75px;
             border-top-left-radius: 75px;
+        }
+
+        /*Formulaire*/
+        label{
+            display: block;
+        }
+
+        input[type="text"], input[type="number"],input[type="time"], input[type="date"], select{
+            width:  40%;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            margin-bottom: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        input[type="submit"] {
+            margin: auto;
+            background-color: #237726;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 15px;
+            cursor: pointer;
+            display: block;
+            font-weight: bold;
+            transition: all 0.5s;
+        }
+        input[type="submit"]:hover {
+            background-color: #3f2377;
         }
 
     </style>
@@ -91,7 +126,9 @@
 
     <div class="donnees" >
         <h2>Vos données personnelles actuelles sont .....</h2>
+    </div>
         
+    <div class="donnees">
         <h2>Enregistrer vos données personnelles</h2>
         
         <form>
@@ -99,16 +136,16 @@
             <select id="sexe" name="sexe">
                 <option value="homme">Homme</option>
                 <option value="femme">Femme</option>
-            </select><br>
+            </select>
 
             <label for="age">Âge :</label><br>
-            <input type="number" id="age" name="age" required><br>
+            <input type="number" id="age" name="age" required>
       
             <label for="poids">Poids (kg) :</label><br>
-            <input type="number" id="poids" name="poids" required><br>
+            <input type="number" id="poids" name="poids" required>
       
             <label for="taille">Taille (cm) :</label><br>
-            <input type="number" id="taille" name="taille" required><br>
+            <input type="number" id="taille" name="taille" required>
         
             <label for="niveau-activite">Niveau d'activité physique :</label><br>
             <select id="niveau-activite" name="niveau-activite" required>
@@ -116,10 +153,15 @@
                 <option value="modere">Modéré (exercice léger 1 à 3 jours par semaine)</option>
                 <option value="actif">Actif (exercice modéré 3 à 5 jours par semaine)</option>
                 <option value="tres-actif">Très actif (exercice intense 6 à 7 jours par semaine)</option>
-            </select><br>
+            </select>
       
             <input type="submit" value="Enregistrer">
         </form>
+
+    </div>
+
+    <div class="donnees">
+        <h3>Enregistrement de votre journal</h3>
     </div>
 
     <footer>

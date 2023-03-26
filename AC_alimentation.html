@@ -50,17 +50,7 @@
         /*Corps de la page*/
         body {
             font-family: Arial, sans-serif;
-            font-size: 16px;
-        }
-
-        h2 {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-
-        ul {
-            list-style: lower-alpha;
+            font-size: 20px;
         }
 
 
@@ -73,6 +63,89 @@
             border-top-right-radius: 75px;
             border-top-left-radius: 75px;
         }
+
+        /*IMC*/
+        .IMC, .alimentation{
+            background-color: rgba(141, 222, 147, 0.221);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 50px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        .IMC:hover, .alimentation:hover{
+            background-color: rgba(37, 137, 44, 0.221);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7); 
+        }
+
+        /*Formulaire*/
+        label{
+            display: block;
+        }
+
+        input[type="text"], input[type="number"],input[type="time"], input[type="date"], select{
+            width:  40%;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            margin-bottom: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        input[type="submit"] {
+            margin: auto;
+            font-size: 15px;
+            background-color: #237726;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            display: block;
+            font-weight: bold;
+            transition: all 0.5s;
+        }
+        input[type="submit"]:hover {
+            background-color: #3f2377;
+        }
+
+        /*Liste*/
+        .IMC li, .alimentation li {
+            margin: 20px;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            color: #333;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.5s;
+            
+        }
+        .IMC li:hover, .alimentation li:hover {
+            background-color: rgba(37, 137, 44, 0.221);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);   
+        }
+        /*Tableau*/
+        table {
+            margin: 0 auto;
+            width: 50%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #237726;
+            font-weight: bold;
+        }
+
+
 
     </style>
 </head>
@@ -89,74 +162,75 @@
         <a class="connecter-button" href="SC_accueil.html">Accueil</a>
     </header>
 
-    <h3>Qu'est-ce que l'IMC ?</h3>
-    <p>L'indice de masse corporelle (IMC) est un indicateur qui permet d'évaluer rapidement la corpulence d'une personne en utilisant son poids et sa taille. Il est utilisé pour évaluer les risques de maladies liées au poids, telles que le diabète, les maladies cardiaques et certains types de cancer.</p><br>
-
-    <div id="imc">
-        <h2>Calculer son IMC</h2>
-        <form>
-            <label for="weight">Poids (kg) :</label>
-            <input type="number" id="weight" name="weight" required><br>
-            
-            <label for="height">Taille (cm) :</label>
-            <input type="number" step="0.01" id="height" name="height" required><br>
-            
-            <button type="button">Calculer</button>
-        </form>
-
-        <div id="imcResult" class="imcResult"></div><br>
-        <h3>Catégories de l'IMC</h3>
-        <table>
-            <tr>
-                <th>IMC</th>
-                <th>Catégorie</th>
-            </tr>
-            <tr>
-                <td>moins de 18,5</td>
-                <td>Sous-poids</td>
-            </tr>
-            <tr>
-                <td>18,5 à 24,9</td>
-                <td>Poids santé</td>
-            </tr>
-            <tr>
-                <td>25 à 29,9</td>
-                <td>Surpoids</td>
-            </tr>
-            <tr>
-                <td>30 à 34,9</td>
-                <td>Obésité de classe 1</td>
-            </tr>
-            <tr>
-                <td>35 à 39,9</td>
-                <td>Obésité de classe 2</td>
-            </tr>
-            <tr>
-                <td>40 et plus</td>
-                <td>Obésité de classe 3</td>
-            </tr>
-        </table><br>
-
-        <h3>Conseils pour maintenir un poids santé</h3>
-        <ul>
-            <li>Manger une alimentation équilibrée avec une variétéd'aliments sains, comme des fruits, des légumes, des céréales complètes, des protéines maigres et des graisses saines</li>
-            <li>Faire de l'exercice régulièrement</li>
-            <li>Boire suffisamment d'eau</li>
-            <li>Limiter la consommation d'aliments riches en calories, en gras saturés, en sucre et en sel</li>
-            <li>Éviter de manger des repas trop copieux ou de grignoter entre les repas</li>
-            <li>Dormir suffisamment pour permettre au corps de récupérer</li>
-            <li>Éviter de fumer ou de consommer de l'alcool en excès</li>
-        </ul>
-
+    <div class="IMC">
+        <h2>Qu'est-ce que l'IMC ?</h2>
+        <p>L'indice de masse corporelle (IMC) est un indicateur qui permet d'évaluer rapidement la corpulence d'une personne en utilisant son poids et sa taille. Il est utilisé pour évaluer les risques de maladies liées au poids, telles que le diabète, les maladies cardiaques et certains types de cancer.</p><br>
+    
+        <div id="imc">
+            <h3>Calculer son IMC</h3>
+            <form>
+                <label for="weight">Poids (kg) :</label><br>
+                <input type="number" id="weight" name="weight" required>
+                
+                <label for="height">Taille (cm) :</label><br>
+                <input type="number" step="0.01" id="height" name="height" required>
+                
+                <input type="submit" value="Calculer">
+            </form>
+    
+            <div id="imcResult" class="imcResult"></div><br>
+            <h3>Catégories de l'IMC</h3>
+            <table>
+                <tr>
+                    <th>IMC</th>
+                    <th>Catégorie</th>
+                </tr>
+                <tr>
+                    <td>moins de 18,5</td>
+                    <td>Sous-poids</td>
+                </tr>
+                <tr>
+                    <td>18,5 à 24,9</td>
+                    <td>Poids santé</td>
+                </tr>
+                <tr>
+                    <td>25 à 29,9</td>
+                    <td>Surpoids</td>
+                </tr>
+                <tr>
+                    <td>30 à 34,9</td>
+                    <td>Obésité de classe 1</td>
+                </tr>
+                <tr>
+                    <td>35 à 39,9</td>
+                    <td>Obésité de classe 2</td>
+                </tr>
+                <tr>
+                    <td>40 et plus</td>
+                    <td>Obésité de classe 3</td>
+                </tr>
+            </table><br>
+    
+            <h3>Conseils pour maintenir un poids santé</h3>
+            <ul>
+                <li>Manger une alimentation équilibrée avec une variétéd'aliments sains, comme des fruits, des légumes, des céréales complètes, des protéines maigres et des graisses saines</li>
+                <li>Faire de l'exercice régulièrement</li>
+                <li>Boire suffisamment d'eau</li>
+                <li>Limiter la consommation d'aliments riches en calories, en gras saturés, en sucre et en sel</li>
+                <li>Éviter de manger des repas trop copieux ou de grignoter entre les repas</li>
+                <li>Dormir suffisamment pour permettre au corps de récupérer</li>
+                <li>Éviter de fumer ou de consommer de l'alcool en excès</li>
+            </ul>
+    
+        </div>
     </div>
 
-    <p>Pour maintenir sa santé il est nécessaire de manger selon ses besoins journalier.</p>
 
-    <div id="calcul-besoins">
+    <div class="alimentation">
         <h2>Calculer vos besoins journaliers en alimentation</h2>
-        <h3>Calculer à partir de mes données personnelles</h3>
+        <input type="submit" value="Calculer à partir de mes données personnelles">
         <h3>Calculer à partir de nouvelles données</h3>
-        <p>Remplissez le formulaire ci-dessous pour calculer vos besoins caloriques et en nutriments à partir de nouvelles données.</p>
+        <p>Remplissez le formulaire ci-dessous pour calculer vos besoins caloriques à partir de nouvelles données.</p>
 
         <form>
             <label for="sexe">Sexe :</label><br>
@@ -182,8 +256,17 @@
                 <option value="tres-actif">Très actif (exercice intense 6 à 7 jours par semaine)</option>
             </select><br>
       
-            <input type="submit" value="Enregistrer">
+            <input type="submit" value="Calculer">
         </form>
+        
+        <h3>Recommandations :</h3>
+        <p>Voici quelques aliments sains recommandés pour répondre à vos besoins en nutriments :</p>
+        <ul>
+            <li>Aliments riches en protéines : poulet, poisson, légumineuses, noix, graines.</li>
+            <li>Aliments riches en glucides : fruits, légumes, céréales complètes, légumineuses.</li>
+            <li>Aliments riches en lipides : avocats, noix, huiles végétales, poissons gras.</li>
+        </ul>
+          
     </div>
 
 
