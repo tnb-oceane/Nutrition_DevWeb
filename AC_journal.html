@@ -140,7 +140,11 @@
         .aliment input[type="button"]:hover {
             background-color: #3f2377;
         }
-        
+
+        /*Aliment ajoutés*/
+        .ajout {
+            display: none;
+        }
 
 
         /*Footer */
@@ -197,7 +201,62 @@
                 <label for="quantity">Quantité (g) :</label>
                 <input type="number" name="quantity" id="quantity">
 
-                <input type="button" name="ajoutAliment" id="ajoutAliment" value="+">
+                <input type="button" name="ajoutAliment" id="ajoutAliment1" value="+">
+            </div>
+
+            <div class="aliment ajout" id="ajout1">
+                <label for="food">Aliments consommés :</label>
+                <input type="text" name="food" id="food">
+
+                <label for="quantity">Quantité (g) :</label>
+                <input type="number" name="quantity" id="quantity">
+
+                <input type="button" name="ajoutAliment" id="ajoutAliment2" value="+">
+
+            </div>
+
+            <div class="aliment ajout 2">
+                <label for="food">Aliments consommés :</label>
+                <input type="text" name="food" id="food">
+
+                <label for="quantity">Quantité (g) :</label>
+                <input type="number" name="quantity" id="quantity">
+
+                <input type="button" name="ajoutAliment" id="ajoutAliment3" value="+">
+
+            </div>
+
+            <div class="aliment ajout 3">
+                <label for="food">Aliments consommés :</label>
+                <input type="text" name="food" id="food">
+
+                <label for="quantity">Quantité (g) :</label>
+                <input type="number" name="quantity" id="quantity">
+
+                <input type="button" name="ajoutAliment" id="ajoutAliment4" value="+">
+
+            </div>
+
+            <div class="aliment ajout 4">
+                <label for="food">Aliments consommés :</label>
+                <input type="text" name="food" id="food">
+
+                <label for="quantity">Quantité (g) :</label>
+                <input type="number" name="quantity" id="quantity">
+
+                <input type="button" name="ajoutAliment" id="ajoutAliment5" value="+">
+
+            </div>
+
+            <div class="aliment ajout 5">
+                <label for="food">Aliments consommés :</label>
+                <input type="text" name="food" id="food">
+
+                <label for="quantity">Quantité (g) :</label>
+                <input type="number" name="quantity" id="quantity">
+
+                <input type="button" name="ajoutAliment" id="ajoutAliment6" value="+">
+
             </div>
             
             <input type="submit" value="Ajouter">
@@ -246,6 +305,28 @@
         <p>Cergy, France <br>Phone: +33 123 456 789 <br>Email: Cytech@myhappynutrition.com</p>
         <p>&copy; 2023  CY Tech</p>
     </footer>
+
+    <script>
+        function ajoutAliment(id){
+            switch (id){
+                case "ajoutAliment1":
+                    ajout1 = document.getElementsByClassName("ajout");
+                    ajout1.style.display = inline;
+                    break;
+                case "ajoutAliment2":
+                    break;
+                case "ajoutAliment3":
+                    break;
+                case "ajoutAliment4":
+                    break;
+                case "ajoutAliment5":
+                    break;
+                case "ajoutAliment6":
+                    break;
+            }
+                
+        }
+    </script>
     
 </body>
 </html>
