@@ -39,7 +39,7 @@
       
         nav li {
             display: inline-block;
-            margin-left: 25px;
+            margin-left: 15px;
         }
     
         .connecter-button{
@@ -113,6 +113,36 @@
         }
 
 
+        
+        .aliment label {
+            display: inline;
+            padding: 25px;
+        }
+        .aliment input[type="text"],
+        .aliment input[type="number"] {
+            width:  20%;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            margin-bottom: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        }
+        .aliment input[type="button"] {
+            background-color: #237726;
+            color: #fff;
+            text-decoration: none;
+            margin: 50px;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+            transition: all 0.5s;
+        }
+        .aliment input[type="button"]:hover {
+            background-color: #3f2377;
+        }
+        
+
+
         /*Footer */
         footer {
             background-color: #6fbe3e;
@@ -131,8 +161,9 @@
         <h1> Happy Nutrition </h1>
         <nav>
             <ul>
-                <li><a class="active" href="AC_alimentation.html">Alimentation</a></li>
                 <li><a href="AC_profil.html">Profil</a></li>
+                <li><a href="AC_journal.html">Journal</a></li>
+                <li><a href="AC_alimentation.html">Alimentation</a></li>
             </ul>
         </nav>
         <a class="connecter-button" href="SC_accueil.html">Accueil</a>
@@ -159,11 +190,15 @@
                 <option value="collation">Collation</option>
             </select>
 
-            <label for="food">Aliments consommés :</label><br>
-            <input type="text" name="food" id="food">
+            <div class="aliment">
+                <label for="food">Aliments consommés :</label>
+                <input type="text" name="food" id="food">
 
-            <label for="quantity">Quantité (g) :</label><br>
-            <input type="number" name="quantity" id="quantity">
+                <label for="quantity">Quantité (g) :</label>
+                <input type="number" name="quantity" id="quantity">
+
+                <input type="button" name="ajoutAliment" id="ajoutAliment" value="+">
+            </div>
             
             <input type="submit" value="Ajouter">
         </form>
@@ -184,20 +219,18 @@
             <label for="time">Heure :</label><br>
             <input type="time" name="time" id="time">
 
-            <label for="meal-type">Type d'activité :</label><br>
-            <select name="meal-type" id="meal-type">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+            <label for="type">Type d'activité :</label><br>
+            <select name="type" id="type">
+                <option value="">Athlétisme (course, marche, corde à sauter...)</option>
+                <option value="">Natation</option>
+                <option value="">Sport en équipe (basket, football, handdball...)</option>
+                <option value="">Sport en salle</option>
+                <option value="">Danse</option>
+                <option value="">Pilate ou Yoga</option>
             </select><br>
 
             <label for="food">Temps d'activité :</label><br>
-            <input type="time" name="food" id="food">
-
-            <label for="quantity">Quantité (g) :</label><br>
-            <input type="number" name="quantity" id="quantity">
+            <input type="time" name="temps" id="temps">
             
             <input type="submit" value="Ajouter">
         </form>
