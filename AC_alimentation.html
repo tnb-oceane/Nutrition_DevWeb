@@ -181,6 +181,33 @@
             </form>
     
             <div id="imcResult" class="imcResult"></div><br>
+            <script>
+                // Sélection des éléments du DOM
+                const form = document.querySelector('form');
+                const imcResult = document.querySelector('#imcResult');
+
+                // Fonction de calcul de l'IMC
+                function calculateBMI(weight, height) {
+                const heightMeters = height / 100;
+                return weight / (heightMeters * heightMeters);
+                }
+
+                // Fonction de gestion de l'événement de soumission du formulaire
+                function handleFormSubmit(event) {
+                event.preventDefault(); // Empêche l'envoi du formulaire
+
+                const weight = parseFloat(document.querySelector('#weight').value);
+                const height = parseFloat(document.querySelector('#height').value);
+
+                const bmi = calculateBMI(weight, height);
+                imcResult.textContent = `Votre IMC est de ${bmi.toFixed(2)}`;
+                }
+
+                // Ajout d'un écouteur d'événements sur la soumission du formulaire
+                form.addEventListener('submit', handleFormSubmit);
+
+
+            </script>
             <h3>Catégories de l'IMC</h3>
             <table>
                 <tr>
@@ -233,34 +260,68 @@
         <input type="submit" value="Calculer à partir de mes données personnelles">
         <h3>Calculer à partir de nouvelles données</h3>
         <p>Remplissez le formulaire ci-dessous pour calculer vos besoins caloriques à partir de nouvelles données.</p>
-
-        <form>
-            <label for="sexe">Sexe :</label><br>
-            <select id="sexe" name="sexe">
-                <option value="homme">Homme</option>
-                <option value="femme">Femme</option>
-            </select><br>
-
-            <label for="age">Âge :</label><br>
-            <input type="number" id="age" name="age" required><br>
       
-            <label for="poids">Poids (kg) :</label><br>
-            <input type="number" id="poids" name="poids" required><br>
+        <form id="form">
+          <label for="sexe">Sexe :</label><br>
+          <select id="sexe" name="sexe">
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+          </select><br>
       
-            <label for="taille">Taille (cm) :</label><br>
-            <input type="number" id="taille" name="taille" required><br>
-        
-            <label for="niveau-activite">Niveau d'activité physique :</label><br>
-            <select id="niveau-activite" name="niveau-activite" required>
-                <option value="sedentaire">Sédentaire (peu ou pas d'exercice)</option>
-                <option value="modere">Modéré (exercice léger 1 à 3 jours par semaine)</option>
-                <option value="actif">Actif (exercice modéré 3 à 5 jours par semaine)</option>
-                <option value="tres-actif">Très actif (exercice intense 6 à 7 jours par semaine)</option>
-            </select><br>
+          <label for="age">Âge :</label><br>
+          <input type="number" id="age" name="age" required><br>
       
-            <input type="submit" value="Calculer">
+          <label for="poids">Poids (kg) :</label><br>
+          <input type="number" id="poids" name="poids" required><br>
+      
+          <label for="taille">Taille (cm) :</label><br>
+          <input type="number" id="taille" name="taille" required><br>
+      
+          <label for="niveau-activite">Niveau d'activité physique :</label><br>
+          <select id="niveau-activite" name="niveau-activite" required>
+            <option value="1.2">Sédentaire (peu ou pas d'exercice)</option>
+            <option value="1.375">Modéré (exercice léger 1 à 3 jours par semaine)</option>
+            <option value="1.55">Actif (exercice modéré 3 à 5 jours par semaine)</option>
+            <option value="1.725">Très actif (exercice intense 6 à 7 jours par semaine)</option>
+          </select><br>
+      
+          <input type="submit" value="Calculer">
         </form>
-        
+      
+        <div id="resultat"></div>
+      </div>
+      
+      <script>
+        function calculerBesoinsCaloriques(sexe, age, poids, taille, niveauActivite) {
+          let bmr;
+      
+          if (sexe === "homme") {
+            bmr = 88.36 + (13.397 * poids) + (4.799 * taille) - (5.677 * age);
+          } else {
+            bmr = 447.593 + (9.247 * poids) + (3.098 * taille) - (4.330 * age);
+          }
+      
+          return Math.round(bmr * niveauActivite);
+        }
+      
+        document.getElementById("form").addEventListener("submit", function (e) {
+          e.preventDefault();
+      
+          const sexe = document.getElementById("sexe").value;
+          const age = parseFloat(document.getElementById("age").value);
+          const poids = parseFloat(document.getElementById("poids").value);
+          const taille = parseFloat(document.getElementById("taille").value);
+          const niveauActivite = parseFloat(document.getElementById("niveau-activite").value);
+          const besoinsCaloriques = calculerBesoinsCaloriques(sexe, age, poids, taille, niveauActivite);
+          const resultat = document.getElementById("resultat");
+          resultat.textContent = `Vos besoins caloriques journaliers sont de ${besoinsCaloriques} calories.`;});
+
+      
+
+
+    </script>    
+
+   
         <h3>Recommandations :</h3>
         <p>Voici quelques aliments sains recommandés pour répondre à vos besoins en nutriments :</p>
         <ul>
