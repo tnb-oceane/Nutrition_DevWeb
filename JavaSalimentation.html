@@ -260,62 +260,64 @@
         <input type="submit" value="Calculer à partir de mes données personnelles">
         <h3>Calculer à partir de nouvelles données</h3>
         <p>Remplissez le formulaire ci-dessous pour calculer vos besoins caloriques à partir de nouvelles données.</p>
-    
+      
         <form id="form">
-            <label for="sexe">Sexe :</label><br>
-            <select id="sexe" name="sexe">
-                <option value="homme">Homme</option>
-                <option value="femme">Femme</option>
-            </select><br>
-    
-            <label for="age">Âge :</label><br>
-            <input type="number" id="age" name="age" required><br>
+          <label for="sexe">Sexe :</label><br>
+          <select id="sexe" name="sexe">
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+          </select><br>
       
-            <label for="poids">Poids (kg) :</label><br>
-            <input type="number" id="poids" name="poids" required><br>
+          <label for="age">Âge :</label><br>
+          <input type="number" id="age" name="age" required><br>
       
-            <label for="taille">Taille (cm) :</label><br>
-            <input type="number" id="taille" name="taille" required><br>
-          
-            <label for="niveau-activite">Niveau d'activité physique :</label><br>
-            <select id="niveau-activite" name="niveau-activite" required>
-                <option value="sedentaire">Sédentaire (peu ou pas d'exercice)</option>
-                <option value="modere">Modéré (exercice léger 1 à 3 jours par semaine)</option>
-                <option value="actif">Actif (exercice modéré 3 à 5 jours par semaine)</option>
-                <option value="tres-actif">Très actif (exercice intense 6 à 7 jours par semaine)</option>
-            </select><br>
+          <label for="poids">Poids (kg) :</label><br>
+          <input type="number" id="poids" name="poids" required><br>
       
-            <input type="submit" value="Calculer">
+          <label for="taille">Taille (cm) :</label><br>
+          <input type="number" id="taille" name="taille" required><br>
+      
+          <label for="niveau-activite">Niveau d'activité physique :</label><br>
+          <select id="niveau-activite" name="niveau-activite" required>
+            <option value="1.2">Sédentaire (peu ou pas d'exercice)</option>
+            <option value="1.375">Modéré (exercice léger 1 à 3 jours par semaine)</option>
+            <option value="1.55">Actif (exercice modéré 3 à 5 jours par semaine)</option>
+            <option value="1.725">Très actif (exercice intense 6 à 7 jours par semaine)</option>
+          </select><br>
+      
+          <input type="submit" value="Calculer">
         </form>
-    
-        <div id="imcResult"></div>
-    </div>
-    <script>
-            function calculerBesoinsCaloriques(sexe, age, poids, taille, niveauActivite) {
-  const tauxMetaboliqueBase = (sexe === 'homme') ? 88.36 + (13.4 * poids) + (4.8 * taille) - (5.7 * age) : 447.6 + (9.2 * poids) + (3.1 * taille) - (4.3 * age);
-  
-  let facteurActivite;
+      
+        <div id="resultat"></div>
+      </div>
+      
+      <script>
+        function calculerBesoinsCaloriques(sexe, age, poids, taille, niveauActivite) {
+          let bmr;
+      
+          if (sexe === "homme") {
+            bmr = 88.36 + (13.397 * poids) + (4.799 * taille) - (5.677 * age);
+          } else {
+            bmr = 447.593 + (9.247 * poids) + (3.098 * taille) - (4.330 * age);
+          }
+      
+          return Math.round(bmr * niveauActivite);
+        }
+      
+        document.getElementById("form").addEventListener("submit", function (e) {
+          e.preventDefault();
+      
+          const sexe = document.getElementById("sexe").value;
+          const age = parseFloat(document.getElementById("age").value);
+          const poids = parseFloat(document.getElementById("poids").value);
+          const taille = parseFloat(document.getElementById("taille").value);
+          const niveauActivite = parseFloat(document.getElementById("niveau-activite").value);
+          const besoinsCaloriques = calculerBesoinsCaloriques(sexe, age, poids, taille, niveauActivite);
+          const resultat = document.getElementById("resultat");
+          resultat.textContent = `Vos besoins caloriques journaliers sont de ${besoinsCaloriques} calories.`;});
 
-  switch (niveauActivite) {
-    case 'sedentaire':
-      facteurActivite = 1.2;
-      break;
-    case 'modere':
-      facteurActivite = 1.375;
-      break;
-    case 'actif':
-      facteurActivite = 1.55;
-      break;
-    case 'tres-actif':
-      facteurActivite = 1.725;
-      break;
-    default:
-      facteurActivite = 1.2;
-  }
+      
 
-  const besoinsCaloriques = Math.round(tauxMetaboliqueBase * facteurActivite);
-  return besoinsCaloriques;
-}
 
     </script>    
 
