@@ -1,14 +1,6 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 session_start();
 include "db_conn.php";
-echo 'Received data:<br>';
-echo 'Username: ' . $_POST['username'] . '<br>';
-echo 'Password: ' . $_POST['password'] . '<br>';
-
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
 
@@ -26,32 +18,31 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     if (empty($username)) {
         header("Location: SC_connecter.php?error=Username is required");
         exit();
-    } else if (empty($password)) {
+    } elseif (empty($password)) {
         header("Location: SC_connecter.php?error=Password is required");
         exit();
     } else {
-        $password = md5($password);
+        $password = md5($password); // Hash the password
 
+        // Check if the user exists in the database
         $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
         $result = mysqli_query($conn, $sql);
 
-        if ($result) {
-            if (mysqli_num_rows($result) === 1) {
-                $row = mysqli_fetch_assoc($result);
-                $_SESSION['username'] = $row['username'];
-                header("Location: AC_profil.php");
-                exit();
-            } else {
-                header("Location: SC_connecter.php?error=Incorrect username or password");
-                exit();
-            }
+        if (mysqli_num_rows($result) === 1) {
+            $row = mysqli_fetch_assoc($result);
+            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['maladie'] = $row['maladie'];
+            header("Location: AC_profil.php?success=Vous êtes connecté(e) !");
+            exit();
         } else {
-            header("Location: SC_connecter.php?error=Error in SQL query: " . mysqli_error($conn));
+            header("Location: SC_connecter.php?error=Invalid Username or Password");
             exit();
         }
-        
     }
 } else {
     header("Location: SC_connecter.php");
     exit();
 }
+?>
