@@ -1,7 +1,5 @@
-<!doctype html>
-<form action="inscription.php" method="post">
-
-
+<!DOCTYPE html>
+<html>
 <head>
     <title>Inscription</title>
     <style>
@@ -35,7 +33,7 @@
             display: block;
         }
 
-        input[type="text"], input[type="password"], input[type="number"] {
+        input[type="text"], input[type="password"], input[type="number"], input[type="email"] {
             width: 60%;
             padding: 10px;
             border-radius: 5px;
@@ -63,35 +61,25 @@
 </head>
 <body>
     <div class="container">
-
         <h1>INSCRIPTION</h1>
-
-        <?php if (isset($_GET['error'])) { ?>
-            <p class="error"><?php echo $_GET['error']; ?></p>
-        <?php } ?>
-        <?php if (isset($_GET['success'])) { ?>
-            <p class="success"><?php echo $_GET['success']; ?></p>
-        <?php } ?>
-        
-        
-
-
+        <form action="inscription.php" method="post" autocomplete="off">
             <label for="username">Identifiant:</label>
             <input type="text" id="username" name="username" required>
 
             <label for="email">Email:</label>
-            <input type="text" id="email" name="email" required>
+            <input type="email" id="email" name="email" required>
 
-            <label for="password">Mot de Passe:</label>
+            <label for="password">Mot de passe:</label>
             <input type="password" id="password" name="password" required>
 
-            <label for="height">Maladie: </label>
-            <input type="number" id="height" name="maladie" required>
+            <label for="maladie">Maladie:</label>
+            <input type="text" id="maladie" name="maladie" required>
 
-            
-            
             <input type="submit" value="S'inscrire">
-        </form>
+</form>
+        <p> je n'ai pas de compte encore </p>
+        <a href="SC_connecter.php">connecter</a>
     </div>
 </body>
 </html>
+
