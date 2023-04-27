@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html>
 <head>
-    <title>Ajouter un repas et une activité</title>
+    <title>Journal</title>
     <style>
         /* Header */
         header {
@@ -17,7 +16,7 @@
             font-size: 50px;
             font-weight: bold;
             text-align: center;
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: Georgia,  Times New Roman , Times, serif;
             margin: 0;
             text-align: center;
         }
@@ -28,7 +27,7 @@
             border-radius: 15px;
             padding: 15px;
             background-color: #237726;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-family:  Franklin Gothic Medium ,  Arial Narrow , Arial, sans-serif;
         }
         header a:hover {
             background-color: #3f2377;
@@ -113,6 +112,8 @@
             background-color: #3f2377;
         }
 
+
+        
         .aliment label {
             display: inline;
             padding: 25px;
@@ -140,10 +141,7 @@
             background-color: #3f2377;
         }
 
-        /*Aliment ajoutés*/
-        .ajout {
-            display: none;
-        }
+
 
         /*Footer */
         footer {
@@ -157,6 +155,7 @@
 
     </style>
 </head>
+
 <body>
     <header>
         <h1> Happy Nutrition </h1>
@@ -164,66 +163,150 @@
             <ul>
                 <li><a href="AC_profil.php">Profil</a></li>
                 <li><a href="AC_journal.php">Journal</a></li>
-                <li><a href="AC_alimentation.html">Alimentation</a></li>
+                <li><a href="AC_alimentation.php">Alimentation</a></li>
             </ul>
         </nav>
-        <a class="connecter-button" href="SC_accueil.html">Accueil</a>
+        <a class="connecter-button" href="SC_accueil.php">Accueil</a>
+        <a class="connecter-button" href="AC_deconnecter.php">Deconnexion</a>
     </header>
 
     <div class="journal">
         <h2>Journal alimentaire</h2>
-        <p>Utilisez notre journal alimentaire pour suivre ce que vous mangez chaque jour. Cela vous permettra de détecter vos habitudes alimentaires, d'améliorer vos repas et de faire des ajustements pour atteindre vos objectifs nutritionnels.</p>
+        <p>Utilisez notre journal alimentaire pour suivre ce que vous mangez chaque jour. Cela vous permettra de detecter vos habitudes alimentaires, d ameliorer vos repas et de faire des ajustements pour atteindre vos objectifs nutritionnels.</p>
         
-        <form>
+        <form action="AC_journalAlimentationForm.php" method="post" >
             <h3>Ajouter un repas</h3>
-        <form action="Jdata.php" method="post">
-        <label for="date_meal">Date:</label>
-        <input type="date" id="date_meal" name="date_meal" required>
+            <label for="date">Date :</label><br>
+            <input type="date" name="date" id="date">
 
-        <label for="time_meal">Heure:</label>
-        <input type="time" id="time_meal" name="time_meal" required>
+            <label for="time">Heure :</label><br>
+            <input type="time" name="time" id="time">
 
-        <label for="meal-type">Type de repas:</label>
-        <input type="text" id="meal-type" name="meal-type" required>
+            <label for="meal-type">Type de repas :</label><br>
+            <select name="meal-type" id="meal-type">
+                <option value="petit-dejeuner">Petit-dejeuner</option>
+                <option value="dejeuner">Dejeuner</option>
+                <option value="gouter">Goûter</option>
+                <option value="diner">Dîner</option>
+                <option value="collation">Collation</option>
+            </select>
 
-        <label for="food">Nourriture:</label>
-        <input type="text" id="food" name="food" required>
+            <div class="aliment">
+                <label for="food">Aliments consommes :</label>
+                <input type="text" name="food" id="food">
 
-        <label for="quantity">Quantité:</label>
-        <input type="number" id="quantity" name="quantity" required>
-        <input type="submit" name="add_meal" value="Ajouter un repas">
-    </form>
-    
+                <label for="quantity">Quantite (g) :</label>
+                <input type="number" name="quantity" id="quantity">
+
+            </div>
+
+            
+            
+            <input type="submit" value="Ajouter">
+        </form>
+
+        <br><br>
+
+        <a href="AC_profil.html">Voir les Jours precedents</a>
+    </div>
+
     <div class="journal">
-        <h2>Journal des activités</h2>
-        <p>Utilisez notre journal des activités pour suivre vos activités physique au fil des jours. Cela vous permettra de détecter vos habitudes, d'améliorer et de faire des ajustements pour atteindre vos objectifs sportifs.</p>
-        <form>
-            <h3>Ajouter une activité</h3>
-    <form action="Jdata.php" method="post">
-        <label for="date_activity">Date:</label>
-        <input type="date" id="date_activity" name="date_activity" required>
-    
-        <label for="time_activity">Heure:</label>
-        <input type="time" id="time_activity" name="time_activity" required>
-    
-        <label for="type">Type d'activité:</label>
-        <input type="text" id="type" name="type" required>
-    
-        <label for="temps">Durée:</label>
-        <input type="time" id="temps" name="temps" required>
-    
-        <input type="submit" name="add_activity" value="Ajouter une activité">
-    </form>
+        <h2>Journal des activites</h2>
+        <p>Utilisez notre journal des activites pour suivre vos activites physique au fil des jours. Cela vous permettra de detecter vos habitudes, d amelioreret de faire des ajustements pour atteindre vos objectifs sportifs.</p>
+        <form action="AC_journalActiviteForm.php" method="post" >
+            <h3>Ajouter une activite</h3>
+            <label for="date">Date :</label><br>
+            <input type="date" name="date" id="date">
 
+            <label for="time">Heure :</label><br>
+            <input type="time" name="time" id="time">
+
+            <label for="type">Type d activite :</label><br>
+            <select name="type" id="type">
+                <option value="">Athletisme (course, marche, corde à sauter...)</option>
+                <option value="">Natation</option>
+                <option value="">Sport en equipe (basket, football, handball...)</option>
+                <option value="">Sport en salle</option>
+                <option value="">Danse</option>
+                <option value="">Pilate ou Yoga</option>
+            </select><br>
+
+            <label for="food">Temps d activite :</label><br>
+            <input type="time" name="temps" id="temps">
+            
+            <input type="submit" value="Ajouter">
+        </form>
+
+        <br><br>
+
+        
+    </div>
+
+    <div class="journal">
+        <form id="formconsult">
+            <label for="date">Consulter mes activités :</label><br>
+            <input type="date" name="date" id="dateconsult"> 
+            
+            <input type="submit" value="Consulter">
+        </form>
+
+        <br><div id="consult"></div>
+    </div>
+
+    
     <footer>
         <h3>Contacter Nous</h3>
         <p>Cergy, France <br>Phone: +33 123 456 789 <br>Email: Cytech@myhappynutrition.com</p>
         <p>&copy; 2023  CY Tech</p>
     </footer>
-    
+
     <script>
 
+        const form = document.querySelector('form');
+        const dateInput = document.querySelector('input[type="date"]');
 
+        document.addEventListener('DOMContentLoaded', () => {
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const currentDate = new Date();
+            const enteredDate = new Date(dateInput.value);
+
+            if (enteredDate > currentDate) {
+                alert("La date ne peut pas etre dans le futur");
+                exit();
+            } 
+           else {
+                form.submit(); 
+            }
+
+        })
+    });
+
+    document.getElementById("formconsult").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+    <?php 
+        session_start();
+        include "BD_connexion.php";
+
+        $id= $_SESSION['id'];
+        $date=$_POST['dateconsult'];
+
+        $sql = "SELECT * FROM alimentation WHERE ID='$id'AND DATE='$date' ";
+        $result = mysqli_query($conn, $sql);
+        echo $result;
+
+        $_SESSION['consult']=$result;
+
+        $conn->close();
+       ?>
+       oui = <?php echo json_encode($_SESSION['consult'])?>;
+       const resultat = document.getElementById("consult");
+        resultat.textContent = `Vos besoins caloriques journaliers sont de ${oui} calories.`;
+    });
+    </script>
+    
 </body>
 </html>
-

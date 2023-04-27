@@ -1,12 +1,3 @@
-<?php
-session_start();
-
-if (!isset($_SESSION['username'])) {
-    header("Location: SC_connecter.php");
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <head>
     <title>Profil</title>
@@ -25,7 +16,7 @@ if (!isset($_SESSION['username'])) {
             font-size: 50px;
             font-weight: bold;
             text-align: center;
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: Georgia,  Times New Roman , Times, serif;
             margin: 0;
             text-align: center;
         }
@@ -36,7 +27,7 @@ if (!isset($_SESSION['username'])) {
             border-radius: 15px;
             padding: 15px;
             background-color: #237726;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-family:  Franklin Gothic Medium ,  Arial Narrow , Arial, sans-serif;
         }
         header a:hover {
             background-color: #3f2377;
@@ -75,6 +66,17 @@ if (!isset($_SESSION['username'])) {
         .donnees:hover{
             background-color: rgba(37, 137, 44, 0.221);
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7); 
+        }
+        .donnees li {
+            margin: 20px;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            color: #333;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.5s;
+            
         }
 
         /*Footer */
@@ -127,22 +129,52 @@ if (!isset($_SESSION['username'])) {
         <nav>
             <ul>
                 <li><a href="AC_profil.html">Profil</a></li>
-                <li><a href="AC_journal.html">Journal</a></li>
-                <li><a href="AC_alimentation.html">Alimentation</a></li>
+                <li><a href="AC_journal.php">Journal</a></li>
+                <li><a href="AC_alimentation.php">Alimentation</a></li>
             </ul>
         </nav>
-        <a class="connecter-button" href="SC_accueil.html">Accueil</a>
+        <a class="connecter-button" href="SC_accueil.php">Accueil</a>
+        <a class="connecter-button" href="AC_deconnecter.php">Deconnexion</a>
     </header>
 
     <div class="donnees" >
-        <h2>Vos données personnelles actuelles sont .....</h2>
+       <?php 
+        session_start();
+        include "BD_connexion.php";
+
+        $id= $_SESSION['id'];
+
+        echo "<h2>Vos Données personnelles sont :</h2>";
+        $sql = "SELECT * FROM profil WHERE ID='$id' ";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) === 1) {
+            $row = mysqli_fetch_assoc($result);
+            $sexe=$row["SEXE"];
+            $age=$row['AGE'];
+            $poids=$row['POIDS'];
+            $taille=$row['TAILLE'];
+            $act=$row['ACTIVITE'];
+
+            echo "<ul>";
+            echo "<li>Votre sexe est : $sexe </li>";
+            echo "<li>Votre age est : $age ans</li>";
+            echo "<li>Votre poids est : $poids kg</li>";
+            echo "<li>Votre taille est : $taille cm</li>";
+            echo "<li>Votre niveau activité est : $act</li>";
+            echo "</ul>";
+        }
+        else{
+            echo "Vous n'avez pas encore enregistré de données";
+        }
+
+        $conn->close();
+       ?>
     </div>
         
     <div class="donnees">
         <h2>Enregistrer vos données personnelles</h2>
         
-        <form action="save_profile_data.php" method="post">
-
+        <form action="AC_profilForm.php" method="post">
             <label for="sexe">Sexe :</label><br>
             <select id="sexe" name="sexe">
                 <option value="homme">Homme</option>
@@ -160,25 +192,15 @@ if (!isset($_SESSION['username'])) {
         
             <label for="niveau-activite">Niveau d'activité physique :</label><br>
             <select id="niveau-activite" name="niveau-activite" required>
-                <option value="sedentaire">Sédentaire (peu ou pas d'exercice)</option>
-                <option value="modere">Modéré (exercice léger 1 à 3 jours par semaine)</option>
-                <option value="actif">Actif (exercice modéré 3 à 5 jours par semaine)</option>
-                <option value="tres-actif">Très actif (exercice intense 6 à 7 jours par semaine)</option>
+                <option value="sedentaire">Sedentaire (peu ou pas d'exercice)</option>
+                <option value="modere">Modére (exercice léger 1 a 3 jours par semaine)</option>
+                <option value="actif">Actif (exercice modére 3 à 5 jours par semaine)</option>
+                <option value="tres-actif">Tres actif (exercice intense 6 à 7 jours par semaine)</option>
             </select>
       
             <input type="submit" value="Enregistrer">
         </form>
-        <?php
-        $userWeight = (isset($_POST['poids'])) ? $_POST['poids'] : 0;
-        $userHeight = (isset($_POST['taille'])) ? $_POST['taille'] : 0;
-        ?>
 
-        <a href="alimentation.php?weight=<?php echo $userWeight; ?>&height=<?php echo $userHeight; ?>">Calculer mon IMC</a>
-
-    </div>
-
-    <div class="donnees">
-        <h3>Enregistrement de votre journal</h3>
     </div>
 
     
